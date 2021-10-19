@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class NavigateToPellet : MonoBehaviour
 {
-    public GameObject water;
-
+    public GameObject turtleMovementScript;
     private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.CompareTag("Pellet"))
+        {
+            
+        }
     }
 }

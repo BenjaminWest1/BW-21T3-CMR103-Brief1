@@ -29,6 +29,14 @@ public class TurtleMovement : MonoBehaviour
 
     public PelletManager pelletManager;
 
+    AudioSource audioSource;
+    public AudioClip eatingNoise;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -125,6 +133,9 @@ public class TurtleMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Pellet"))
         {
+            audioSource.clip = eatingNoise;
+            audioSource.Play();
+
             pelletManager.PelletRespawn();
         }
     }

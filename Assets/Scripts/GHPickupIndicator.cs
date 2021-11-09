@@ -5,6 +5,8 @@ using UnityEngine;
 public class GHPickUpIndicator : OVRGrabbable
 {
     Renderer r;
+    AudioSource audioSorce;
+    AudioClip pickupSound;
 
     // Start is called before the first frame update
     protected override void Start()
@@ -23,6 +25,13 @@ public class GHPickUpIndicator : OVRGrabbable
         base.GrabBegin(hand, grabPoint);
         //now do the things I want to do
         r.material.color = Color.blue;
+
+        audioSorce.clip = pickupSound;
+        audioSorce.Play();
+
+        OVRHapticsClip ovrClip = new OVRHapticsClip(pickupSound);
+        OVRHaptics.RightChannel.Preempt(ovrClip);
+        OVRHaptics.LeftChannel.Preempt(ovrClip);
     }
 
 

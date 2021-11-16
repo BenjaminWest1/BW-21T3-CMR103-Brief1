@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PickupIndicator : OVRGrabbable
 {
-    Renderer r;
     AudioSource audioSource;
     public AudioClip pickupSound;
     OVRHapticsClip ovrClip;
@@ -12,7 +11,6 @@ public class PickupIndicator : OVRGrabbable
     // Start is called before the first frame update
     protected override void Start()
     {
-        r = GetComponent<Renderer>();
 
         audioSource = GetComponent<AudioSource>();
 
@@ -27,9 +25,10 @@ public class PickupIndicator : OVRGrabbable
 
     public override void GrabBegin(OVRGrabber hand, Collider grabPoint)
     {
+        Debug.Log("This is being called");
+
         base.GrabBegin(hand, grabPoint);
         //now do the things I want to do
-        r.material.color = Color.blue;
 
         audioSource.clip = pickupSound;
         audioSource.Play();
@@ -48,6 +47,5 @@ public class PickupIndicator : OVRGrabbable
     public override void GrabEnd(Vector3 linearVelocity, Vector3 angularVelocity)
     {
         base.GrabEnd(linearVelocity, angularVelocity);
-        r.material.color = Color.green;
     }
 }

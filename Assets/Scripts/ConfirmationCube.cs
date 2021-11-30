@@ -5,24 +5,25 @@ using UnityEngine;
 public class ConfirmationCube : MonoBehaviour
 {
     private int handsInside = 0;
+    public GameObject gameObject;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (hand.gameObject.name == "RightControllerAnchor" || hand.gameObject.name == "LeftControllerAnchor")
+        if (other.gameObject.name == "RightControllerAnchor" || other.gameObject.name == "LeftControllerAnchor")
         {
-            this.SetActive(true);
+            gameObject.SetActive(true);
             handsInside++;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (hand.gameObject.name == "RightControllerAnchor" || hand.gameObject.name == "LeftControllerAnchor")
+        if (other.gameObject.name == "RightControllerAnchor" || other.gameObject.name == "LeftControllerAnchor")
         {
             handsInside--;
             if (handsInside == 0)
             {
-                this.SetActive(false);
+                gameObject.SetActive(false);
             }
         }
     }

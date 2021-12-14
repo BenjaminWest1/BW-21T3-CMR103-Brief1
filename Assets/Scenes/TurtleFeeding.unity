@@ -10123,7 +10123,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObject: {fileID: 258823051528048752}
-  r: {fileID: 0}
+  r: {fileID: 258823051528048756}
+--- !u!23 &258823051528048756 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 14878599119069514, guid: 0fb963162274bd3489710bd7e451983f,
+    type: 3}
+  m_PrefabInstance: {fileID: 258823051528048751}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1271554220390719975
 PrefabInstance:
   m_ObjectHideFlags: 0

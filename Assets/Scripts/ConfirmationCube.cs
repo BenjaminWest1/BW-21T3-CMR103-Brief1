@@ -6,12 +6,13 @@ public class ConfirmationCube : MonoBehaviour
 {
     private int handsInside = 0;
     public GameObject gameObject;
+    public Renderer r;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "RightControllerAnchor" || other.gameObject.name == "LeftControllerAnchor")
         {
-            gameObject.SetActive(true);
+            r.enabled = true;
             handsInside++;
         }
     }
@@ -23,7 +24,7 @@ public class ConfirmationCube : MonoBehaviour
             handsInside--;
             if (handsInside == 0)
             {
-                gameObject.SetActive(false);
+                r.enabled = false;
             }
         }
     }

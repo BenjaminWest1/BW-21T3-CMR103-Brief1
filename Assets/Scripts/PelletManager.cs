@@ -6,6 +6,7 @@ public class PelletManager : MonoBehaviour
 {
     public GameObject respawnPellet;
     public Vector3 respawnPelletPoint;
+    public ConfirmationCube cube;
 
     // Start is called before the first frame update
     void Start()
@@ -27,5 +28,6 @@ public class PelletManager : MonoBehaviour
         this.GetComponent<Rigidbody>().velocity = Vector3.zero;
         this.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         this.transform.position = respawnPelletPoint;
+        cube.handsInside = 0;
     }
 }

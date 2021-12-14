@@ -10094,6 +10094,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 258823052331454719, guid: 0fb963162274bd3489710bd7e451983f,
         type: 3}
+      propertyPath: cube
+      value: 
+      objectReference: {fileID: 258823051528048753}
+    - target: {fileID: 258823052331454719, guid: 0fb963162274bd3489710bd7e451983f,
+        type: 3}
       propertyPath: respawnPellet
       value: 
       objectReference: {fileID: 348890469}

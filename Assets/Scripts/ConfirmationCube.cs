@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ConfirmationCube : MonoBehaviour
 {
-    private int handsInside = 0;
+    public int handsInside = 0;
     public GameObject gameObject;
     public Renderer r;
 
@@ -14,6 +14,7 @@ public class ConfirmationCube : MonoBehaviour
         {
             r.enabled = true;
             handsInside++;
+            Debug.Log(handsInside);
         }
     }
 
@@ -22,6 +23,7 @@ public class ConfirmationCube : MonoBehaviour
         if (other.gameObject.name == "RightControllerAnchor" || other.gameObject.name == "LeftControllerAnchor")
         {
             handsInside--;
+            Debug.Log(handsInside);
             if (handsInside == 0)
             {
                 r.enabled = false;
